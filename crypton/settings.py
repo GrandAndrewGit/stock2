@@ -90,12 +90,12 @@ TRANS_PREC = 10
 #EMAIL_HOST_USER = "robot@btc-trade.com.ua"
 #EMAIL_HOST_PASSWORD = None #"#hervam210286"
 
-DEFAULT_FROM_EMAIL= "robot@btc-trade.com.ua"  #"btctradeua@gmail.com" # "django@btc-trade.com.ua"
+DEFAULT_FROM_EMAIL= "robot@btcde..ua"  #"btctradeua@gmail.com" # "django@btc-trade.com.ua"
 
-EMAIL_HOST = "smtp.mail.ru"
+EMAIL_HOST = "smtil.ru"
 EMAIL_PORT=587 #465
-EMAIL_HOST_USER = "robot@btc-trade.com.ua"
-EMAIL_HOST_PASSWORD = "randomnumber66" #"#hervam2106"
+EMAIL_HOST_USER = "robot@-tradua"
+EMAIL_HOST_PASSWORD = "randber66" #"#hervam2106"
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL =  True
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -161,9 +161,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',#  Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
      #   'NAME':  ROOT_PATH + 'crypton.db',                      # Or path to database file if using sqlite3.
-		'NAME':'crypton_odessa',
-		'USER':'odessa',
-	    'PASSWORD':'odessa_pass',
+		'NAME':'cryessa',
+		'USER':'odsa',
+	    'PASSWORD':'odepass',
 	 	'HOST':'localhost',
 		'PORT':'3307'
   },
