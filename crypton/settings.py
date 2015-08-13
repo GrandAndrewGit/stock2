@@ -4,17 +4,17 @@
 ##------------------------------------------------------------##
 import sys
 
+ROOT_PATH = "/home/btctrade/stock/"
+
+DEBUG = False 
 default_hold = 36 ##default withdraw hold
 
 ADMIN_TOOLS_INDEX_DASHBOARD = 'crypton.dashboard.CustomIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'crypton.dashboard.CustomAppIndexDashboard'
 
 
-CRYPTO_KEY = "1/D44Xa_ERT#%$_s"
-
-
-BASE_URL = "http://127.0.0.1:8000/"
-BASE_HOST = "127.0.0.1:8000"
+BASE_URL = "http://52.28.238.42/"
+BASE_HOST = "52.28.238.42"
 
 COMISSION_USER = 2
 CRYPTO_USER = 3
@@ -52,12 +52,9 @@ COMMON_SALT = "sdfsd_DSfs"
 CRYPTO_SALT = "test"
 
 
-ROOT_PATH = "/home/bogdan/stock2/"
-
-DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 USE_X_FORWARDED_HOST=True
-ALLOWED_HOSTS=[ "127.0.0.1","ttt.btc-trade.com.ua","localhost","127.0.0.1:8366" ]
+ALLOWED_HOSTS=[ "52.28.238.42","127.0.0.1","ttt.btc-trade.com.ua","localhost","127.0.0.1:8366" ]
 
 HELPDESK_FOOTER_SHOW_CHANGE_LANGUAGE_LINK = True
 HELPDESK_FOOTER_SHOW_API_LINK = False
@@ -165,8 +162,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',#  Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
      #   'NAME':  ROOT_PATH + 'crypton.db',                      # Or path to database file if using sqlite3.
 		'NAME':'crypton_odessa',
-		'USER':'root',
-	    'PASSWORD':'ada',
+		'USER':'odessa',
+	    'PASSWORD':'odessa_pass',
 	 	'HOST':'localhost',
 		'PORT':'3307'
   },
@@ -247,7 +244,7 @@ STATIC_ROOT = ROOT_PATH + 'img/'
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
-STATIC_SERVER = "http://127.0.0.1/" 
+STATIC_SERVER = "http://52.28.238.42/" 
 #"https://btc-trade.com.ua/"
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -349,28 +346,45 @@ INSTALLED_APPS = (
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
+LOGGING=None
 
-LOGGING = {
+if not DEBUG:
+  LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': ROOT_PATH + 'crypton.log',
+         },
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['file'],
             'level': 'ERROR',
             'propagate': True,
         },
+        'django.db.backends': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'crypton.main.tornado.api': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            "formatter": "simple"
+
+        },
     }
-}
-
-
-
-LOGGING = {
+  }
+else:
+  LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
@@ -430,5 +444,5 @@ LOGGING = {
         },
     }
         
-}
+  }
 
