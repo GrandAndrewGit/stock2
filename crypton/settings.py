@@ -6,6 +6,7 @@ import sys
 
 default_hold = 36 ##default withdraw hold
 
+PROJECT_NAME="BITCOIN TRADE COMPANY"
 ADMIN_TOOLS_INDEX_DASHBOARD = 'crypton.dashboard.CustomIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'crypton.dashboard.CustomAppIndexDashboard'
 
@@ -21,9 +22,9 @@ LIQPAY_MERCHID="i4196993"
 LIQPAY_KEY="rTr98EffzI2N"
 
 
-P24_MERCHID="1029"
-P24_PASSWD="LRv7YR04vTiOZF8uGjgT2Dm6"
-P24MERCH_CARD="47311856"
+P24_MERCHID="110548"
+P24_PASSWD="7kzW4vSUHKwE1DSNd78s21FQBOzk521u"
+P24MERCH_CARD="5218575700001652"
 
 BANK_UAH_OKPO = "12312"
 BANK_UAH_MFO = "12312211"
@@ -104,24 +105,23 @@ EMAIL_USE_TLS = True
 #EMAIL_USE_SSL =  True
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_SUBJECT_PREFIX = "BTC TRADE UA"
+EMAIL_SUBJECT_PREFIX = PROJECT_NAME
 SERVER_EMAIL = "robot@btc-trade.com.ua"
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_SUBJECT_PREFIX = "BTC TRADE UA"
 
 
 SERVER_EMAIL ="server@btc-trade.com.ua"
 
 help_page = u"Помощь"
 pin_page= u"Страница персонального PIN кода"
-pagetitle_main = u"btc-trade.com.ua"
-pagetitle_home = u"самый простой и дешевый способ купить или продать биткоины в Украине"
+pagetitle_main = PROJECT_NAME
+pagetitle_home = u""
 withdraw_cancel = u"Вывод отменен"
 withdraw_msg_cancel = u"Ваша заявка на вывод отменена, мы рады, что вы остаетесь с нами"
 
-secondary_main = u"BTC TRADE UA украинская биржа криптовалют"
+secondary_main = PROJECT_NAME
 secondary_regis = u"Регистрация"
 secondary_regis_success = u"Регистрация прошла успешно"
 secondary_regis_finish_success = u"Вы успешно активировали свой акаунт"
@@ -215,7 +215,6 @@ LOCALE_PATHS = (
     # os.path.join(PROJECT_DIR, 'locale'),
 )
 
-PROJECT_NAME="BITCOIN TRADE COMPANY"
 
 SITE_ID = 1
 
@@ -256,7 +255,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme': "advanced",
 }
 TINYMCE_SPELLCHECKER = True
-TINYMCE_JS_URL = 'https://btc-trade.com.ua/img/js/tiny_mce.js'
+TINYMCE_JS_URL = 'https://bitmoney.trade/static/js/tiny_mce.js'
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,spellchecker,paste,searchreplace",
     'theme': "advanced",
